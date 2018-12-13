@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "212232644303",
+    "firebase_url": "https://notifrpl.firebaseio.com",
+    "project_id": "notifrpl",
+    "storage_bucket": "notifrpl.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:212232644303:android:790d0d92c683d02d",
+        "android_client_info": {
+          "package_name": "com.example.umaaamm.ingetin"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "212232644303-2grcv10dq0i721479oj04pmq4coklri4.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.umaaamm.ingetin",
+            "certificate_hash": "e6f202edb50875d886d71b2ac61a446d7466ab4b"
+          }
+        },
+        {
+          "client_id": "212232644303-46d0534m5fa1ulu0fke80v1p3etmfqbv.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDnC0Hnfm0gvyWi3TO-RlSho-VWAyQaWLk"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "212232644303-46d0534m5fa1ulu0fke80v1p3etmfqbv.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

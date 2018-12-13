@@ -14,7 +14,7 @@
     <item
         android:id="@+id/calender"
         android:icon="@drawable/calender"
-        android:title="Kalender Akademik" />
+        android:title="Kalender"/>
     <item
         android:id="@+id/profil"
         android:icon="@drawable/profile"
