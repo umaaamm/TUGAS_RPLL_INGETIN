@@ -20,6 +20,12 @@ public class MyFirebaseMessagingService extends FirebaseMessagingService {
         //calling method to generate push notification
         sendNotification(remoteMessage.getNotification().getBody());
     }
+
+
+
+
+
+    
     @Override
     public void onNewToken(String token) {
         Log.d(TAG, "Refreshed token: " + token);
