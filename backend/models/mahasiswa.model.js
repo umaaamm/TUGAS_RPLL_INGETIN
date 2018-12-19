@@ -12,7 +12,8 @@ module.exports = function(sequelize, DataType) {
 			}
 		},
 		status: DataType.STRING,
-		tanggal_masuk_univ: DataType.DATE
+		tanggal_masuk_univ: DataType.DATE,
+		tanggal_lulus: DataType.DATE
 	},{
 		timestamps: false
     });

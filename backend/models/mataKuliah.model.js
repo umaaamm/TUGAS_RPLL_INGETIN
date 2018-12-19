@@ -12,7 +12,8 @@ module.exports = function(sequelize, DataType) {
 				key: 'id'
 			}
 		},
-		semester: DataType.INTEGER
+		semester: DataType.INTEGER,
+		jumlah_SKS: DataType.STRING
 	},{
 		timestamps: false
     });
