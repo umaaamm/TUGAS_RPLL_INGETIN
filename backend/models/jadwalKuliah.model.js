@@ -26,8 +26,9 @@ module.exports = function(sequelize, DataType) {
 				key: 'id'
 			}
 		},
-		waktu_mulai: DataType.DATE,
-		waktu_selesai: DataType.DATE
+		hari: DataType.STRING,
+		waktu_mulai: DataType.TIME,
+		waktu_selesai: DataType.TIME
 	},{
 		timestamps: false
     });
