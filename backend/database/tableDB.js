@@ -1,17 +1,18 @@
 var sequelize = require(__dirname + '/../dbconnection');
-var deadlineTugas = sequelize.import(__dirname + '/../model/deadlineTugas.model');
-var departemen = sequelize.import(__dirname + '/../model/departemen.model');
-var dosen = sequelize.import(__dirname + '/../model/dosen.model');
-var fakultas = sequelize.import(__dirname + '/../model/fakultas.model');
-var jadwalKuliah = sequelize.import(__dirname + '/../model/jadwalKuliah.model');
-var jadwalUjian = sequelize.import(__dirname + '/../model/jadwalUjian.model');
-var mahasiswa = sequelize.import(__dirname + '/../model/mahasiswa.model');
-var mataKuliah = sequelize.import(__dirname + '/../model/mataKuliah.model');
-var pengajar = sequelize.import(__dirname + '/../model/pengajar.model');
-var pesertaKuliah = sequelize.import(__dirname + '/../model/pesertaKuliah.model');
-var ruangan = sequelize.import(__dirname + '/../model/ruangan.model');
-var tataUsaha = sequelize.import(__dirname + '/../model/tataUsaha.model');
-var user = sequelize.import(__dirname + '/../model/user.model');
+var deadlineTugas = sequelize.import(__dirname + '/../models/deadlineTugas.model');
+var departemen = sequelize.import(__dirname + '/../models/departemen.model');
+var dosen = sequelize.import(__dirname + '/../models/dosen.model');
+var fakultas = sequelize.import(__dirname + '/../models/fakultas.model');
+var jadwalKuliah = sequelize.import(__dirname + '/../models/jadwalKuliah.model');
+var jadwalUjian = sequelize.import(__dirname + '/../models/jadwalUjian.model');
+var jadwalTambahan = sequelize.import(__dirname + '/../models/jadwalTambahan.model');
+var mahasiswa = sequelize.import(__dirname + '/../models/mahasiswa.model');
+var mataKuliah = sequelize.import(__dirname + '/../models/mataKuliah.model');
+var pengajar = sequelize.import(__dirname + '/../models/pengajar.model');
+var pesertaKuliah = sequelize.import(__dirname + '/../models/pesertaKuliah.model');
+var ruangan = sequelize.import(__dirname + '/../models/ruangan.model');
+var tataUsaha = sequelize.import(__dirname + '/../models/tataUsaha.model');
+var user = sequelize.import(__dirname + '/../models/user.model');
 
 fakultas
     .sync()
@@ -30,31 +31,34 @@ fakultas
                                 dosen
                                     .sync()
                                     .then(() => {
-                                        pengajar
+                                        mataKuliah
                                             .sync()
                                             .then(() => {
-                                                mataKuliah
-                                                    .sync()
-                                            })
-                                        ruangan
-                                            .sync()
-                                            .then(() => {
-                                                jadwalKuliah
-                                                    .sync()
-                                                    .then(() => {
-                                                        jadwalUjian
-                                                            .sync()
-                                                    })
-                                                pesertaKuliah
-                                                    .sync()
-                                                    .then(() => {
-                                                        deadlineTugas
+                                                ruangan
+                                                    .sync().then(()=>{
+                                                        jadwalKuliah
                                                             .sync()
                                                             .then(() => {
-                                        
+                                                                pengajar
+                                                                    .sync()
+                                                                    .then(() => {
+                                                                        jadwalUjian
+                                                                            .sync()
+                                                                    })
+                                                                pesertaKuliah
+                                                                    .sync()
+                                                                    .then(() => {
+                                                                        deadlineTugas
+                                                                            .sync()
+                                                                            .then(() => {
+                                                                                jadwalTambahan
+                                                                                    .sync()
+                                                                            })
+                                                                    })
                                                             })
                                                     })
                                             })
+                                        
                                     })
                             })
                     })
