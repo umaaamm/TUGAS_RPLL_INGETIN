@@ -2,6 +2,7 @@ var sequelize = require(__dirname + '/../dbconnection');
 var mahasiswa = sequelize.import(__dirname + '/mahasiswa.model');
 var mataKuliah = sequelize.import(__dirname + '/mataKuliah.model');
 var ruangan = sequelize.import(__dirname + '/ruangan.model');
+var hari = sequelize.import(__dirname + '/hari.model');
 
 module.exports = function(sequelize, DataType) {
 	return sequelize.define('jadwal_kuliah', {
@@ -26,7 +27,13 @@ module.exports = function(sequelize, DataType) {
 				key: 'id'
 			}
 		},
-		hari: DataType.STRING,
+		fk_id_hari: { //1 Senin 2 Selasa dst...
+			type: DataType.INTEGER,
+			references: {
+				model: hari,
+				key: 'id'
+			}
+		}, 
 		waktu_mulai: DataType.TIME,
 		waktu_selesai: DataType.TIME
 	},{

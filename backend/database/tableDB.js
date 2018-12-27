@@ -13,6 +13,7 @@ var pesertaKuliah = sequelize.import(__dirname + '/../models/pesertaKuliah.model
 var ruangan = sequelize.import(__dirname + '/../models/ruangan.model');
 var tataUsaha = sequelize.import(__dirname + '/../models/tataUsaha.model');
 var user = sequelize.import(__dirname + '/../models/user.model');
+var hari = sequelize.import(__dirname + '/../models/hari.model');
 
 fakultas
     .sync()
@@ -36,7 +37,9 @@ fakultas
                                             .then(() => {
                                                 ruangan
                                                     .sync().then(()=>{
-                                                        jadwalKuliah
+                                                        hari.sync()
+                                                        .then(()=> {
+                                                            jadwalKuliah
                                                             .sync()
                                                             .then(() => {
                                                                 pengajar
@@ -56,6 +59,8 @@ fakultas
                                                                             })
                                                                     })
                                                             })
+                                                        }) 
+                                                        
                                                     })
                                             })
                                         
