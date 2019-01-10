@@ -2,6 +2,8 @@ var sequelize = require(__dirname + '/../dbconnection');
 var jadwalTambahans = sequelize.import(__dirname + '/../models/jadwalTambahan.model');
 var token = require(__dirname + '/token.controller');
 
+const Op = sequelize.Op;
+
 class JadwalTambahan {
     constructor() {
         this.info;

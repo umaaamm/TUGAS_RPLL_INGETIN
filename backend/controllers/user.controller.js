@@ -6,6 +6,7 @@ var token = require(__dirname + '/token.controller');
 
 class User {
     constructor() {
+        this.token;
     }
 
     async createUser(req, res){ //1 mahasiswa, 2 dosen, 3 TU 
@@ -45,7 +46,12 @@ class User {
 
     updatePassword(req, res){
         users.update({
-            password: setPassword(req.body.password)
+            password: auth.setPassword(req.body.password)
+        },
+        {
+            where : {
+                id : req.params.id
+            }
         }).then(result=>{
             res.json({
                 status: true,
@@ -117,11 +123,11 @@ class User {
                 })
             } else {
                 if(auth.comparePassword(req.body.password, user.password)){
-                    auth.token = token.setupToken(user, "mahasiswa")
+                    this.token = token.setupToken(user, "mahasiswa")
                     res.json({
                         status: true,
                         message: "Auth successfull",
-                        token: auth.token
+                        token: this.token
                     })
                 } else {
                     res.json({

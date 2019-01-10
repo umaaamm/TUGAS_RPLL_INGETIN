@@ -15,7 +15,7 @@ class Token {
 			}
 		}) 
 	}
-	decodeToken(data) {
+	DecodeToken(data) {
 		try{
             var decoded = jwt.verify(data, this.secretKey);
             return decoded;

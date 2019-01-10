@@ -6,6 +6,11 @@ var hari = sequelize.import(__dirname + '/hari.model');
 
 module.exports = function(sequelize, DataType) {
 	return sequelize.define('jadwal_kuliah', {
+		id: {
+            type: DataType.INTEGER,
+            primaryKey: true,
+            autoIncrement: true
+        },
 		id_komti: { //fk_id_mahasiswa
 			type: DataType.INTEGER,
 			references: {

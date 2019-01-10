@@ -3,6 +3,11 @@ var user = sequelize.import(__dirname + '/user.model');
 
 module.exports = function(sequelize, DataType) {
 	return sequelize.define('jadwal_tambahan', {
+		id: {
+            type: DataType.INTEGER,
+            primaryKey: true,
+            autoIncrement: true
+        },
 		fk_id_user: {
 			type: DataType.INTEGER,
 			references: {

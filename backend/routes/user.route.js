@@ -6,7 +6,7 @@ router.post('/createuser', (req, res, next) => {
     users.createUser(req, res);
 });
 
-router.put('/updatepassword', (req, res, next) => { 
+router.put('/updatepassword/:id', (req, res, next) => { 
     users.updatePassword(req, res);
 });
 

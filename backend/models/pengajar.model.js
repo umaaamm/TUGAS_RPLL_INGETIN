@@ -4,6 +4,11 @@ var jadwalKuliah = sequelize.import(__dirname + '/jadwalKuliah.model');
 
 module.exports = function(sequelize, DataType) {
 	return sequelize.define('pengajar', {
+		id: {
+            type: DataType.INTEGER,
+            primaryKey: true,
+            autoIncrement: true
+        },
 		fk_id_dosen: { 
 			type: DataType.INTEGER,
 			references: {

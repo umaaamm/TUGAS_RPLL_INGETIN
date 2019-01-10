@@ -7,6 +7,8 @@ var pesertaKuliahs = sequelize.import(__dirname + '/../models/pesertaKuliah.mode
 var deadlineTugass = sequelize.import(__dirname + '/../models/deadlineTugas.model');
 var token = require(__dirname + '/token.controller');
 
+const Op = sequelize.Op;
+
 pengajars.belongsTo(jadwalKuliahs, {foreignKey: 'fk_id_jadwal_kuliah'});
 deadlineTugass.belongsTo(pengajars, {foreignKey: 'fk_id_pengajar'});
 jadwalKuliahs.belongsTo(mataKuliahs, {foreignKey: 'fk_id_mata_kuliah'});
@@ -40,7 +42,7 @@ class DeadlineTugas {
 
                 deadlineTugas = await deadlineTugass.findAll({ //cari berdasarkan seluruh id matakuliah terurut berdasarkan waktu mulai
                     where: {
-                        '$pengajar.fk_id_jadwal_kuliah': {
+                        '$pengajar.fk_id_jadwal_kuliah$': {
                             [Op.in]: arrIdJadwalKuliah
                         },
                         batas_pengumpulan: {

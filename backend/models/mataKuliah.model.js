@@ -3,6 +3,11 @@ var dosen = sequelize.import(__dirname + '/dosen.model');
 
 module.exports = function(sequelize, DataType) {
 	return sequelize.define('mata_kuliah', {
+		id: {
+            type: DataType.INTEGER,
+            primaryKey: true,
+            autoIncrement: true
+        },
 		nama: DataType.STRING,
 		kode: DataType.STRING, //kode matkul
 		id_koordinator: { //fk_id_dosen

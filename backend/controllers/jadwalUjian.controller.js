@@ -9,6 +9,8 @@ var token = require(__dirname + '/token.controller');
 jadwalUjians.belongsTo(mataKuliahs, {foreignKey: 'fk_id_mata_kuliah'});
 jadwalKuliahs.belongsTo(mataKuliahs, {foreignKey: 'fk_id_mata_kuliah'});
 
+const Op = sequelize.Op;
+
 class JadwalUjian {
     constructor() {
         this.info;

@@ -4,6 +4,11 @@ var ruangan = sequelize.import(__dirname + '/ruangan.model');
 
 module.exports = function(sequelize, DataType) {
 	return sequelize.define('jadwal_ujian', {
+		id: {
+            type: DataType.INTEGER,
+            primaryKey: true,
+            autoIncrement: true
+        },
 		fk_id_mata_kuliah: { 
 			type: DataType.INTEGER,
 			references: {

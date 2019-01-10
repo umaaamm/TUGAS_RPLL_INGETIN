@@ -3,6 +3,11 @@ var fakultas = sequelize.import(__dirname + '/fakultas.model');
 
 module.exports = function(sequelize, DataType) {
 	return sequelize.define('departemen', {
+		id: {
+            type: DataType.INTEGER,
+            primaryKey: true,
+            autoIncrement: true
+        },
 		nama: DataType.STRING,
 		fk_id_fakultas: {
 			type: DataType.INTEGER,

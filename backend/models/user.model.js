@@ -3,6 +3,11 @@ var departemen = sequelize.import(__dirname + '/departemen.model');
 
 module.exports = function(sequelize, DataType) {
 	return sequelize.define('user', {
+		id: {
+            type: DataType.INTEGER,
+            primaryKey: true,
+            autoIncrement: true
+        },
 		username: DataType.STRING,
 		password: DataType.STRING,
 		nama: DataType.STRING,
